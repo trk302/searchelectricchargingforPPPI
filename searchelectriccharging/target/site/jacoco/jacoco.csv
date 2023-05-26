@@ -1,0 +1,5 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+demo,com.searchelectriccharging,MainApp,9,98,2,4,3,23,3,3,1,2
+demo,com.searchelectriccharging,Station,0,51,0,2,0,16,0,8,0,7
+demo,com.searchelectriccharging,LanguageManager,0,10,0,0,0,4,0,3,0,3
+demo,com.searchelectriccharging,RoutePlanner,2,105,3,9,1,26,3,8,0,5

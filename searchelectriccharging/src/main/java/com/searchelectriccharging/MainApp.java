@@ -102,4 +102,14 @@ class RoutePlanner {
         return false;
     }
 }
+class LanguageManager {
+    private String currentLanguage;
 
+    public void changeLanguage(String language) {
+        this.currentLanguage = language;
+    }
+
+    public String getCurrentLanguage() {
+        return currentLanguage;
+    }
+}

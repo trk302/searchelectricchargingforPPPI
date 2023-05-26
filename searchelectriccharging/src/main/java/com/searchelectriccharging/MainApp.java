@@ -52,3 +52,54 @@ class Station {
         return portStatuses;
     }
 }
+class RoutePlanner {
+    private List<Station> stations;
+
+    public RoutePlanner(List<Station> stations) {
+        this.stations = stations;
+    }
+
+    public Station findNearestStation() {
+        Station nearestStation = null;
+        double minDistance = Double.MAX_VALUE;
+        for (Station station : stations) {
+            double distance = calculateDistance(station);
+            if (distance < minDistance) {
+                minDistance = distance;
+                nearestStation = station;
+            }
+        }
+        return nearestStation;
+    }
+
+    private double calculateDistance(Station station) {
+        double x1 = 0.0; // Координати поточного розташування користувача
+        double y1 = 0.0;
+        double x2 = 0.0; // Координати станції
+        double y2 = 0.0;
+        double distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+        return distance;
+    }
+
+    public List<Station> getAvailableStations() {
+        List<Station> availableStations = new ArrayList<>();
+
+        for (Station station : stations) {
+            if (isStationAvailable(station)) {
+                availableStations.add(station);
+            }
+        }
+        return availableStations;
+    }
+
+    private boolean isStationAvailable(Station station) {
+        List<String> portStatuses = station.getPortStatuses();
+        for (String status : portStatuses) {
+            if (status.equals("вільний")) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
+

@@ -1,0 +1,17 @@
+<!ELEMENT report (sessioninfo+,package,counter+)>
+<!ATTLIST report name NMTOKEN #REQUIRED>
+<!ELEMENT sessioninfo EMPTY>
+<!ATTLIST sessioninfo id NMTOKEN #REQUIRED>
+<!ATTLIST sessioninfo start NMTOKEN #REQUIRED>
+<!ATTLIST sessioninfo dump NMTOKEN #REQUIRED>
+<!ELEMENT package (class+,sourcefile,counter+)>
+<!ATTLIST package name CDATA #REQUIRED>
+<!ELEMENT class (method+,counter+)>
+<!ATTLIST class name CDATA #REQUIRED>
+<!ATTLIST class sourcefilename NMTOKEN #REQUIRED>
+<!ELEMENT method (counter+)>
+<!ATTLIST method name CDATA #REQUIRED>
+<!ATTLIST method desc CDATA #REQUIRED>
+<!ATTLIST method line NMTOKEN #REQUIRED>
+<!ELEMENT counter EMPTY>
+<!ATTLIST counter type (BRANCH|CLASS|COMPLEXITY|INSTRUCTION|LINE|METHOD) #REQUIRED><!ATTLIST counter missed (0|1|12|2|3|5|6|9) #REQUIRED><!ATTLIST counter covered NMTOKEN #REQUIRED><!ELEMENT sourcefile (line+,counter+)><!ATTLIST sourcefile name NMTOKEN #REQUIRED><!ELEMENT line EMPTY><!ATTLIST line nr NMTOKEN #REQUIRED><!ATTLIST line mi (0|1|2|3) #REQUIRED><!ATTLIST line ci (0|1|10|11|12|13|2|3|4|5|8) #REQUIRED><!ATTLIST line mb (0|1) #REQUIRED><!ATTLIST line cb (0|1|2) #REQUIRED>

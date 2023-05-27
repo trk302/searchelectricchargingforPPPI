@@ -12,7 +12,7 @@ import java.util.List;
 <span class="fc" id="L12">        Station nearestStation = routePlanner.findNearestStation();</span>
 <span class="pc bpc" id="L13" title="1 of 2 branches missed.">        if (nearestStation != null) {</span>
 <span class="fc" id="L14">            System.out.println(&quot;Найближча станція: &quot; + nearestStation.getName());</span>
-<span class="fc" id="L15">        } else {</span>
+        } else {
 <span class="nc" id="L16">            System.out.println(&quot;Немає доступних станцій.&quot;);</span>
         }
 
@@ -21,8 +21,8 @@ import java.util.List;
 <span class="fc" id="L21">            System.out.println(&quot;Вільні станції:&quot;);</span>
 <span class="fc bfc" id="L22" title="All 2 branches covered.">            for (Station station : availableStations) {</span>
 <span class="fc" id="L23">                System.out.println(station.getName());</span>
-            }
-<span class="fc" id="L25">        } else {</span>
+<span class="fc" id="L24">            }</span>
+        } else {
 <span class="nc" id="L26">            System.out.println(&quot;Немає доступних вільних станцій.&quot;);</span>
         }
 
@@ -101,7 +101,7 @@ class RoutePlanner {
 <span class="fc" id="L101">                minDistance = distance;</span>
 <span class="fc" id="L102">                nearestStation = station;</span>
             }
-        }
+<span class="fc" id="L104">        }</span>
 <span class="fc" id="L105">        return nearestStation;</span>
     }
 
@@ -121,7 +121,7 @@ class RoutePlanner {
 <span class="pc bpc" id="L121" title="1 of 2 branches missed.">            if (isStationAvailable(station)) {</span>
 <span class="fc" id="L122">                availableStations.add(station);</span>
             }
-        }
+<span class="fc" id="L124">        }</span>
 <span class="fc" id="L125">        return availableStations;</span>
     }
 
@@ -131,7 +131,7 @@ class RoutePlanner {
 <span class="pc bpc" id="L131" title="1 of 2 branches missed.">            if (status.equals(&quot;вільний&quot;)) {</span>
 <span class="fc" id="L132">                return true;</span>
             }
-        }
+<span class="nc" id="L134">        }</span>
 <span class="nc" id="L135">        return false;</span>
     }
 }
